@@ -2,6 +2,7 @@ package dynamicPubsub.generic.subscribe
 
 import dynamicPubsub.generic.content.Event
 
-trait Subscriber {
-  def subscribe(topic:String,consumer:Consumer[Event])
+abstract class Subscriber[C,E<:Event[C]](val topic:String,val consumer:E=>Unit) {
+  def subscribe()
+  def unsubscribe()
 }
