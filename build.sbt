@@ -1,4 +1,5 @@
-//val dep = "package.name" % "name" %"version"
+val scalaTestDep = "org.scalatest" %% "scalatest" % "3.0.5" % "test"
+val scalacticDep = "org.scalactic" %% "scalactic" % "3.0.5"
 
 lazy val commonSettings = Seq(
   organization := "shemer.dynamicpubsub",
@@ -9,5 +10,6 @@ lazy val root  = (project in file("."))
   .settings(
     name := "A1",
     commonSettings,
-//    libraryDependencies+=dep
+    libraryDependencies += scalaTestDep,
+    libraryDependencies += scalacticDep
   )

@@ -6,8 +6,8 @@ import dynamicPubsub.geospatial.Location
 class Area(bottomLeft:Location,topRight:Location) extends ContentAbstraction[Location]{
   import Area._
   override def contains(c: Location): Boolean = bottomLeft.lte(c)  && c.lte(topRight)
-  override def getEmptyDescription: ContentAbstraction[Location] = emptyAbstraction
+  override def getEmptyDescription: ContentAbstraction[Location] = emptyArea
 }
 object Area{
-  val emptyAbstraction = new Area(new Location(Long.MaxValue,Long.MaxValue),new Location(Long.MinValue,Long.MinValue))
+  val emptyArea = new Area(new Location(Long.MaxValue,Long.MaxValue),new Location(Long.MinValue,Long.MinValue))
 }
