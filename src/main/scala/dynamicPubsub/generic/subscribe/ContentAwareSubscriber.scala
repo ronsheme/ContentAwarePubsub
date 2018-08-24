@@ -2,7 +2,7 @@ package dynamicPubsub.generic.subscribe
 
 import dynamicPubsub.generic.content.{ContentAbstraction, ContentTopicPredicate, Event,Content}
 
-class ContentAwareSubscriber[C<:Content, E <: Event[C]](provider: SubscriptionProvider[C, E],
+class ContentAwareSubscriber[C<:Content[C], E <: Event[C]](provider: SubscriptionProvider[C, E],
                                                consumer: E => Unit,private var currentSubscribers: List[Subscriber[C, E]]) {
 
   def subscribe(content: C): Unit = {
