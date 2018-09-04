@@ -2,10 +2,11 @@ package dynamicPubsub.generic.publish
 
 import dynamicPubsub.generic.content.{ContentTopicPredicate, Event,Content}
 
-class PublisherProvider[C<:Content[C],E<:Event[C]](publishers:List[Publisher[C,E]],
-                                       contentTopicPredicate: ContentTopicPredicate[C]){
+abstract class PublisherProvider[C<:Content[C],E<:Event[C]](contentTopicPredicate: ContentTopicPredicate[C]){
+
+  abstract def getPublishers:List[Publisher[C,E]]
 
   def getPublishers(contentToPublish:C):List[Publisher[C,E]] = {
-    publishers.filterNot{ p=>contentTopicPredicate.test(p.topic,contentToPublish)}
+    getPublishers.filterNot{ p=>contentTopicPredicate.test(p.topic,contentToPublish)}
   }
 }
