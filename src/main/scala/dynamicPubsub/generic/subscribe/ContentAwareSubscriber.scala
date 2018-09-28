@@ -12,7 +12,7 @@ class ContentAwareSubscriber[C<:Content[C], E <: Event[C]](provider: Subscriptio
     irrelevant.foreach(subscriber=>subscriber.unsubscribe())
 
     val newSubscribers = updatedSubscribers filter {sub1:Subscriber[C,E] => !currentSubscribers.exists { sub2 => sub2.topic.equals(sub1.topic) }}
-    newSubscribers.foreach(subscriber=>subscriber.subscribe())
+    newSubscribers.foreach(subscriber=>subscriber.subscribe(consumer))
     currentSubscribers = relevant ::: newSubscribers
   }
 

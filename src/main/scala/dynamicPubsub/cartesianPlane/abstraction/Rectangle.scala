@@ -21,6 +21,8 @@ class Rectangle (var bottomLeft:CartesianPoint, var topRight:CartesianPoint) ext
   }
   override def contains(c: CartesianPoint): Boolean = bottomLeft.lte(c)  && c.lte(topRight)
   override def getEmptyDescription: ContentAbstraction[CartesianPoint] = emptyRectangle
+
+  override def toString: String = s"$bottomLeft->$topRight"
 }
 object Rectangle{
   val emptyRectangle = new Rectangle(CartesianPoint.MAX_POINT,CartesianPoint.MIN_POINT)

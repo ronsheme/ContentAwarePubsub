@@ -19,6 +19,8 @@ class CartesianPoint(val x: Integer, val y:Integer) extends Content[CartesianPoi
     result = prime * result + y
     result
   }
+
+  override def toString: String = s"($x,$y)"
 }
 
 object CartesianPoint{
