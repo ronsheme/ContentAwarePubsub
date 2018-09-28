@@ -1,4 +1,4 @@
-package dynamicPubsub.cartesianPlane
+package dynamicPubsub.cartesianPlain
 
 import dynamicPubsub.generic.content.Content
 

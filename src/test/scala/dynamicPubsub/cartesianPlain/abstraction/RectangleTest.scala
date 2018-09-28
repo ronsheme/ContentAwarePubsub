@@ -1,6 +1,6 @@
-package dynamicPubsub.cartesianPlane.abstraction
+package dynamicPubsub.cartesianPlain.abstraction
 
-import dynamicPubsub.cartesianPlane.CartesianPoint
+import dynamicPubsub.cartesianPlain.CartesianPoint
 import org.scalatest.FlatSpec
 
 class RectangleTest extends FlatSpec {

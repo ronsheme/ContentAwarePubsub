@@ -1,8 +1,8 @@
-package dynamicPubsub.cartesianPlane.abstraction
+package dynamicPubsub.cartesianPlain.abstraction
 
-import dynamicPubsub.cartesianPlane.CartesianPoint
+import dynamicPubsub.cartesianPlain.CartesianPoint
 import dynamicPubsub.generic.content.{ContentAbstraction, ContentAbstractor}
 
-class CartesianPlaneAbstractor extends ContentAbstractor[CartesianPoint]{
+class CartesianPlainAbstractor extends ContentAbstractor[CartesianPoint]{
   override def abstractContent(content: CartesianPoint): List[ContentAbstraction[CartesianPoint]] = ???
 }

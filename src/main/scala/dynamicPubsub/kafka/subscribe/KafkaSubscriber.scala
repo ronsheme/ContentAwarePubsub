@@ -1,6 +1,6 @@
 package dynamicPubsub.kafka.subscribe
 
-import dynamicPubsub.cartesianPlane.{CartesianPoint, CartesianPointEvent}
+import dynamicPubsub.cartesianPlain.{CartesianPoint, CartesianPointEvent}
 import dynamicPubsub.generic.subscribe.Subscriber
 
 class KafkaSubscriber(topic:String)
